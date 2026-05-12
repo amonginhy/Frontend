@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --bg: 251 246 238;
+    --fg: 27 24 20;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-cream-50 text-ink-800 antialiased;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    background-image: radial-gradient(
+        circle at 1px 1px,
+        rgba(92, 31, 34, 0.05) 1px,
+        transparent 0
+      );
+    background-size: 22px 22px;
+  }
+
+  ::selection {
+    @apply bg-accent-500/30 text-burgundy-700;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cream-300/70 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cream-400;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/60 shadow-soft;
+  }
+
+  .text-display {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply tracking-tight;
+  }
+
+  .skeleton {
+    @apply bg-gradient-to-r from-cream-100 via-cream-200 to-cream-100 bg-[length:800px_100%] animate-shimmer rounded-2xl;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-accent-500/30 focus-visible:border-accent-500;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

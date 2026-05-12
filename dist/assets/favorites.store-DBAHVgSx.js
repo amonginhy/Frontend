@@ -1,0 +1,1 @@
+import{g as e,D as c}from"./index-BgPLpl9a.js";const p=e()(c((t,r)=>({productIds:[],toggle:s=>{const o=r().productIds.includes(s);return t({productIds:o?r().productIds.filter(d=>d!==s):[...r().productIds,s]}),!o},has:s=>r().productIds.includes(s),clear:()=>t({productIds:[]})}),{name:"sweetly:favorites"}));export{p as u};

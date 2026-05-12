@@ -1,0 +1,1 @@
+import{o as t}from"./http-3ZToKkzK.js";const a=(e,s=250)=>new Promise(r=>setTimeout(()=>r(e),s)),n={list:async()=>a(t),byId:async e=>a(t.find(s=>s.id===e||s.reference===e)),byStatus:async e=>a(t.filter(s=>s.status===e)),active:async()=>a(t.find(e=>["placed","confirmed","baking","ready"].includes(e.status)))};export{n as o};
